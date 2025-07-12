@@ -1,1 +1,60 @@
 Hands-on SOC Analyst projects using Kali Linux and a home lab.
+What i've done I cloned my github repository to my SOC-Analyst-Homelab
+- git clone https://github.com/lurgioh/SOC-Analyst-HomeLab.git
+
+I created a Structered Report - essentially creating a notepad within the termainal
+-nano nmap-windows10-scan.md
+
+#  Nmap Scan - Windows 10 VM
+**Analyst:** Harrison  
+**Date:** July 11, 2025  
+**Target IP:** 192.168.56.101  
+**Attacker System:** Kali Linux (VirtualBox)  
+**Tool Used:** Nmap
+
+---
+
+##  Scan Command Used
+
+```bash
+nmap -sS -sV -O 192.168.56.101
+-sS: SYN stealth Scan -- Least Likely to trigger firewalls
+-sV: Service Detection -- grabs banner/versions info
+-O: OS FingerPrinting -- attempts to identify OS
+
+Then I committed and Pushed It to GitHub
+git add nmap-windows10-scan.md
+git commit -m "Added SOC report: Nmap scan of Windows 10"
+git push origin main
+
+Running a real nmap scan on my own system
+-Run Ip a
+-Inet was 127.0.0.1
+-Run nmap -sS -sV -o 127.0.0.1
+
+-Structered Report:
+nano nmap-localhost-scan.md
+
+# Nmap Scan - Kali Linux Localhost (127.0.0.1)
+
+**Analyst:** Harrison  
+**Date:** July 11, 2025  
+**Target IP:** 127.0.0.1 (localhost)  
+**Tool Used:** Nmap
+
+---
+
+## Command Used
+
+```bash
+nmap -sS -sV -O 127.0.0.1
+
+-Results
+All 1000 scanned ports on localhost (127.0.0.1) are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+Too many fingerprints match this host to give specific OS details
+Network Distance: 0 hops
+
+All 1000 scanned ports on localhost are in ignored states: No ports were open during the scan. All were closed or filtered
+Too many fingerprints match this host to give specific OS details: Nmap tried to guess the OS using TCP/IP behavior but because localhost is “too perfect”, it couldn’t narrow it down
+
